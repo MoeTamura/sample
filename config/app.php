@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Facade;
 
 return [
@@ -69,7 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Tokyo',
 
     /*
     |--------------------------------------------------------------------------
@@ -213,3 +214,4 @@ return [
     ])->toArray(),
 
 ];
+
