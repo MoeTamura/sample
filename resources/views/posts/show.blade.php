@@ -7,7 +7,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
-    <body>
+    <body class="antialiased">
         <h1 class='title'>
             {{ $post->title }}
         </h1>
