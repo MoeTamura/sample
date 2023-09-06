@@ -11,10 +11,9 @@
        <h1>Blog Name</h1>
        <form action="/posts" method="POST">
            @csrf
-       </form>
         <div class="title">
             <h2>Title</h2>
-            <input type="text" name=post[title] placeholder="タイトル">
+            <input type="text" name="post[title]" placeholder="タイトル">
         </div>
         <div class="body">
             <h2>Body</h2>
