@@ -8,9 +8,11 @@ use Illuminate\Pagination\Paginator;
 class AppServiceProvider extends ServiceProvider
 {
    
-     public function boot(){
+     public function boot()
+     {
         Paginator::useBootstrap();
-        
+        \URL::forceScheme('https');
+        $this->app['request']->server->set('HTTPS','on');
         // Paginator::useBootstrapFour();
     }
 }

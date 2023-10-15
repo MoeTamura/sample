@@ -3,9 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Posts</title>
+        <title>Blog</title>
+        
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        
     </head>
     <body class="antialiased">
        <h1>Blog Name</h1>
@@ -22,6 +24,14 @@
             <p class="body__error" style="color:red">{{ $errors->first('post.body') }}</p>
         </div>
         <input type="submit" value="store">
+        <div class="category">
+            <h2>Category</h2>
+            <select name="post[category_id]">
+                @foreach($categories as $category)
+                   <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
+        </div>
       </form>
       <div class="footer">
          <a href="/">戻る</a>

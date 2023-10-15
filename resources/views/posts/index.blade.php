@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <title>Blog</title>
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    </head>
+ <x-app-layout>
     <body class="antialiased">
         <h1>Blog Name</h1>
-        <a href="/posts/create">create</a>
-        <div class='posts'>
+         <a href="/posts/create">create</a>
+          <div class='posts'>
             <div class='post'>
               @foreach ($posts as $post)
                  <div class='post'>
@@ -21,8 +14,10 @@
                        <button type="button" onclick="deletePost({{ $post->id }})">delete</button>
                    </form>
                  </div>
+                 <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
               @endforeach
-        </div>
+            </div>
+            <p>ログインユーザー  {{ Auth::user()->name}}</p>
         <div class='paginate'>{{ $posts->links()}}</div>
         <script>
             function deletePost(id) {
@@ -34,4 +29,4 @@
             }
         </script>
     </body>
-</html>
+  </x-app-layout>
